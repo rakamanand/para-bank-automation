@@ -1,1 +1,9 @@
-
+target/
+.classpath
+.project
+.settings/
+bin/
+*.log
+/.metadata/
+test-output/
+.vscode/
