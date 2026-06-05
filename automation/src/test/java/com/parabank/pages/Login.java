@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.parabank.utilities.CommonConstants;
 import com.parabank.utilities.CommonMethods;
 
 public class Login {
@@ -32,12 +33,16 @@ public class Login {
 	public void userLogin(String uname, String pwd) {
 		wait.until(ExpectedConditions.visibilityOf(logInBtn));
 		
+		CommonMethods.capture(driver, "Browser");
+		
 		userName.sendKeys(uname);
 		password.sendKeys(pwd);
 		logInBtn.click();
 		
 		String title = driver.getTitle();
 		System.out.println(title);
+		
+		CommonMethods.capture(driver, "Logged In");
 		
 	}
 	
